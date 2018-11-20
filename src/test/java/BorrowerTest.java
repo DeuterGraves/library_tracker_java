@@ -6,12 +6,19 @@ import static org.junit.Assert.assertEquals;
 public class BorrowerTest {
 
     private Book book;
+    private Book book1;
     private Borrower borrower;
+    private Library library;
 
     @Before
     public void before(){
         book = new Book("True Grit", "Charles Portis", "western");
+        book1 = new Book("News of the World", "Paulette Jiles", "western");
         borrower = new Borrower("Caroline", "Graves");
+        library = new Library(5);
+        library.addBook(book);
+        library.addBook(book1);
+
     }
 
 //    borrower has a borrowed book array list
@@ -38,9 +45,16 @@ public class BorrowerTest {
 //    }
 
     @Test
-    public void borrowerCanBorrowBook(){
+    public void borrowerCanAddBook(){
         borrower.addBook(book);
         assertEquals(1, borrower.bookCount());
+    }
+
+    @Test
+    public void borrowerCanFindBookAtLibrary(){
+        borrower.borrowBook(library, "True Grit");
+        assertEquals(1, borrower.bookCount());
+        assertEquals(1, library.bookCount());
     }
 
 }

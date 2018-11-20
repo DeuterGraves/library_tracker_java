@@ -32,8 +32,24 @@ public class Borrower {
         bookList.add(book);
     }
 
+    public void borrowBook(Library library, String title) {
+//        find the book by title returns the book
+        Book book = library.findBook(title);
+//        add the book to the borrower
+        this.addBook(book);
+//        find the book by index in the library - returns the index
+        int bookIndex = library.findBookIndex(title);
+//        remove the book by index from the library
+        library.lendBook(bookIndex);
+    }
+
+    public void findBook(String true_grit) {
+    }
+
 //    public String borrowerName(){
 ////        return firstName + lastName;
 //        return String.format("%s %d", firstName, lastName);
 //    }
+
+
 }

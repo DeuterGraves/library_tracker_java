@@ -48,4 +48,10 @@ public class Library {
         }
         return -1;
     }
+
+    public Book lendBook(int bookIndex){
+        return collection.remove(bookIndex);
+    }
+
+
 }

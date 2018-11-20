@@ -70,4 +70,13 @@ public class LibraryTest {
         assertEquals(1, library.findBookIndex("If I Ever Get Out of this World Alive"));
     }
 
+    @Test
+    public void libraryRemovesBookbyIndex(){
+        library.addBook(book2);
+        library.addBook(book3);
+        library.addBook(book4);
+        library.lendBook(1);
+        assertEquals(2, library.bookCount());
+    }
+
 }
