@@ -31,5 +31,21 @@ public class Library {
     }
 
 
+    public Book findBook(String title) {
+        for(Book book: collection){
+            if (book.getTitle().equals(title)){
+                return book;
+            }
+        }
+        return null;
+    }
 
+    public int findBookIndex(String title) {
+        for(Book book: collection){
+            if (book.getTitle().equals(title)){
+                return collection.indexOf(book);
+            }
+        }
+        return -1;
+    }
 }

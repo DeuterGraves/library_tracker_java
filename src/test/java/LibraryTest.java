@@ -54,4 +54,20 @@ public class LibraryTest {
         assertEquals(3, library.bookCount());
     }
 
+    @Test
+    public void libraryCanFindSpecificBook(){
+        library.addBook(book2);
+        library.addBook(book3);
+        library.addBook(book4);
+        assertEquals(book3, library.findBook("If I Ever Get Out of this World Alive"));
+    }
+
+    @Test
+    public void libraryReturnsFoundBookIndex(){
+        library.addBook(book2);
+        library.addBook(book3);
+        library.addBook(book4);
+        assertEquals(1, library.findBookIndex("If I Ever Get Out of this World Alive"));
+    }
+
 }
