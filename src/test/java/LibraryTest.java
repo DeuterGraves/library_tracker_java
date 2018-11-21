@@ -79,4 +79,12 @@ public class LibraryTest {
         assertEquals(2, library.bookCount());
     }
 
+    @Test
+    public void libraryIsFull(){
+        library.addBook(book2);
+        library.addBook(book3);
+        library.addBook(book1);
+        assertEquals(true, library.isFull());
+    }
+
 }

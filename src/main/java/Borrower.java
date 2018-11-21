@@ -43,13 +43,10 @@ public class Borrower {
         library.lendBook(bookIndex);
     }
 
-    public void findBook(String true_grit) {
-    }
 
-//    public String borrowerName(){
-////        return firstName + lastName;
-//        return String.format("%s %d", firstName, lastName);
-//    }
+    public String borrowerName(){
+        return firstName + " " + lastName;
+    }
 
 
 }

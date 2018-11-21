@@ -37,12 +37,12 @@ public class BorrowerTest {
     public void borrowerHasALastName(){
         assertEquals("Graves", borrower.getLastName());
     }
-//
-////    borrower has a first and last name.
-//    @Test
-//    public void borrowerHasAName(){
-//        assertEquals("Caroline Graves", borrower.borrowerName());
-//    }
+
+//    borrower has a first and last name.
+    @Test
+    public void borrowerHasAName(){
+        assertEquals("Caroline Graves", borrower.borrowerName());
+    }
 
     @Test
     public void borrowerCanAddBook(){

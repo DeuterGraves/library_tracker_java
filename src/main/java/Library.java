@@ -24,7 +24,9 @@ public class Library {
     }
 
     public void addBook(Book book){
-        if (this.bookCount() < this.capacity){
+////        this can be made it's own function - is the library full to return a boolean.
+//        if (this.bookCount() < this.capacity){
+        if (!isFull()){
         collection.add(book);
         }
         return;
@@ -41,7 +43,8 @@ public class Library {
     }
 
     public int findBookIndex(String title) {
-        for(Book book: collection){
+        for(Book book : collection){
+//            == doesn't work with strings, it may in weird cases - but technically, it doesn't consistently work with strings so use .equals() for strings.
             if (book.getTitle().equals(title)){
                 return collection.indexOf(book);
             }
@@ -51,6 +54,10 @@ public class Library {
 
     public Book lendBook(int bookIndex){
         return collection.remove(bookIndex);
+    }
+
+    public boolean isFull(){
+        return collection.size() >= this.capacity;
     }
 
 
